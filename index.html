@@ -5,23 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Contraintuitivo</title>
     <style>
-        body {
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             background: #000;
             font-family: Arial, sans-serif;
             color: #fff;
+            overflow: hidden;
         }
         
         #info {
-            margin-bottom: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
             font-size: 18px;
+            z-index: 10;
+        }
+
+        #instructions {
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            font-size: 16px;
+            z-index: 10;
         }
         
         #gameCanvas {
             display: block;
             background: #fff;
             cursor: none;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         #gameOver {
@@ -34,6 +53,7 @@
             color: #000;
             padding: 30px;
             text-align: center;
+            z-index: 100;
         }
         
         button {
@@ -51,11 +71,11 @@
         Tiempo: <span id="time">30</span>s
     </div>
     
-    <div id="info">
+    <div id="instructions">
         ROJO = Toca (+puntos) | VERDE = Evita (-vida) | CONTROLES INVERTIDOS
     </div>
     
-    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <canvas id="gameCanvas"></canvas>
     
     <div id="gameOver">
         <h2>JUEGO TERMINADO</h2>
