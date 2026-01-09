@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Contraintuitivo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        
+        #info {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        #gameCanvas {
+            display: block;
+            background: #fff;
+            cursor: none;
+        }
+        
+        #gameOver {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            color: #000;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        Puntos: <span id="score">0</span> | 
+        Vidas: <span id="lives">3</span> | 
+        Tiempo: <span id="time">30</span>s
+    </div>
+    
+    <div id="info">
+        ROJO = Toca (+puntos) | VERDE = Evita (-vida) | CONTROLES INVERTIDOS
+    </div>
+    
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    
+    <div id="gameOver">
+        <h2>JUEGO TERMINADO</h2>
+        <p>Puntuación: <span id="finalScore">0</span></p>
+        <button onclick="location.reload()">Reiniciar</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
